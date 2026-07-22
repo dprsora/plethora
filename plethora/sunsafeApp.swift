@@ -1,14 +1,14 @@
 //
-//  plethoraApp.swift
-//  plethora
+//  sunsafeApp.swift
+//  sunsafe
 //
-//  Created by DPI Student 011 on 7/16/26.
+//  Created by DPI Student 011 on 7/21/26.
 //
 
 import SwiftUI
 
 @main
-struct plethoraApp: App {
+struct sunsafeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
