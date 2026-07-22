@@ -11,9 +11,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		60EB8EAE3009422100089BBA /* plethora */ = {
+		60EB8EAE3009422100089BBA /* sunsafe */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = plethora;
+			path = sunsafe;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		60EB8EA33009422100089BBA = {
 			isa = PBXGroup;
 			children = (
-				60EB8EAE3009422100089BBA /* plethora */,
+				60EB8EAE3009422100089BBA /* sunsafe */,
 				60EB8EAD3009422100089BBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				60EB8EAE3009422100089BBA /* plethora */,
+				60EB8EAE3009422100089BBA /* sunsafe */,
 			);
 			name = sunsafe;
 			packageProductDependencies = (
