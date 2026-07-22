@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		60EB8EAC3009422100089BBA /* plethora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plethora.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60EB8EAC3009422100089BBA /* sunsafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunsafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		60EB8EAD3009422100089BBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				60EB8EAC3009422100089BBA /* plethora.app */,
+				60EB8EAC3009422100089BBA /* sunsafe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		60EB8EAB3009422100089BBA /* plethora */ = {
+		60EB8EAB3009422100089BBA /* sunsafe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "plethora" */;
+			buildConfigurationList = 60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "sunsafe" */;
 			buildPhases = (
 				60EB8EA83009422100089BBA /* Sources */,
 				60EB8EA93009422100089BBA /* Frameworks */,
@@ -63,11 +63,11 @@
 			fileSystemSynchronizedGroups = (
 				60EB8EAE3009422100089BBA /* plethora */,
 			);
-			name = plethora;
+			name = sunsafe;
 			packageProductDependencies = (
 			);
 			productName = plethora;
-			productReference = 60EB8EAC3009422100089BBA /* plethora.app */;
+			productReference = 60EB8EAC3009422100089BBA /* sunsafe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 60EB8EA73009422100089BBA /* Build configuration list for PBXProject "plethora" */;
+			buildConfigurationList = 60EB8EA73009422100089BBA /* Build configuration list for PBXProject "sunsafe" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				60EB8EAB3009422100089BBA /* plethora */,
+				60EB8EAB3009422100089BBA /* sunsafe */,
 			);
 		};
 /* End PBXProject section */
@@ -309,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		60EB8EA73009422100089BBA /* Build configuration list for PBXProject "plethora" */ = {
+		60EB8EA73009422100089BBA /* Build configuration list for PBXProject "sunsafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60EB8EB53009422300089BBA /* Debug */,
@@ -318,7 +318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "plethora" */ = {
+		60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "sunsafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60EB8EB83009422300089BBA /* Debug */,
