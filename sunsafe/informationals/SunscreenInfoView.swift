@@ -19,27 +19,27 @@ enum SunscreenTips {
         SunscreenTip(
             icon: "drop.fill",
             title: "use enough product",
-            description: "At a minimum, most adults need about 1 ounce of sunscreen — roughly the amount to fill a shot glass — to fully cover skin not covered by clothing. Depending on your body size, you may need more sunscreen to protect your exposed skin from the sun’s harmful rays. When applying sunscreen to your face, use at least 1 teaspoon (about the amount needed to cover the length of your index and middle fingers). Rub the sunscreen thoroughly into your skin."
+            description: "Use a full shot glass for your body and two finger-lengths for your face. Rub it in thoroughly and reapply often, as sunburns usually happen when people use too little or forget to put on more."
         ),
         SunscreenTip(
             icon: "clock.fill",
             title: "apply before going out",
-            description: "It takes approximately 15 minutes for your skin to absorb the sunscreen and protect you. If you wait until you are in the sun to apply sunscreen, your skin is unprotected and can burn"
+            description: "It takes approximately 15 minutes for your skin to absorb the sunscreen and protect you. If you wait until you are in the sun to apply sunscreen, your skin is unprotected and can burn."
         ),
         SunscreenTip(
             icon: "arrow.triangle.2.circlepath",
             title: "reapply every two hours",
-            description: "People who get sunburned usually didn't reapply, used too little sunscreen, or used an expired sunscreen. Your skin is exposed to the sun's harmful UV rays every time you go outside, even on cloudy days and in the winter. So whether you are on vacation or taking a brisk walk in your neighborhood, remember to use sunscreen."
+            description: "People who get sunburned usually didn't reapply, used too little sunscreen, or used an expired sunscreen. Your skin is exposed to the sun's harmful UV rays every time you go outside, even on cloudy days and in the winter."
         ),
         SunscreenTip(
             icon: "face.smiling",
             title: "apply in all places not covered by clothing",
-            description: "Remember your neck, face, ears, tops of your feet, and legs. For hard‐to‐reach areas like your back, ask someone to help you or use a spray sunscreen. If you have thinning hair, either apply sunscreen to your scalp or wear a wide‐brimmed hat. To protect your lips, apply a lip balm with an SPF of at least 30."
+            description: "Don't forget easy-to-miss areas like your neck, ears, legs, feet, and scalp—or wear a wide-brimmed hat. Use an SPF 30+ balm for your lips, and use a spray or ask for help with your back."
         ),
         SunscreenTip(
             icon: "sun.max.fill",
             title: "check the SPF",
-            description: "Choose a sunscreen that has an SPF of 30 or higher, is water resistant, and provides broad-spectrum (UVA and UVB rays) coverage. When this sunscreen is also a tinted sunscreen with iron oxide, you better protect your skin from developing dark spots. Iron oxide protects your skin from the sun’s visible light."
+            description: "Choose a sunscreen that has an SPF of 30 or higher, is water resistant, and provides broad-spectrum (UVA and UVB rays) coverage. Choosing a tinted version with iron oxide provides extra protection against dark spots and visible light."
         ),
     ]
 }
