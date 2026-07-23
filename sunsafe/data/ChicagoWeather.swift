@@ -17,13 +17,13 @@ struct ChiDailyWeather: Identifiable {
 
 enum ChicagoWeather {
     static let lastWeek: [ChiDailyWeather] = [
-        ChiDailyWeather(label: "Mon", date: "Jul 14", uvIndex: 7.2, condition: "Sunny"),
-        ChiDailyWeather(label: "Tue", date: "Jul 15", uvIndex: 8.4, condition: "Sunny"),
-        ChiDailyWeather(label: "Wed", date: "Jul 16", uvIndex: 5.1, condition: "Partly Cloudy"),
-        ChiDailyWeather(label: "Thu", date: "Jul 17", uvIndex: 3.6, condition: "Cloudy"),
-        ChiDailyWeather(label: "Fri", date: "Jul 18", uvIndex: 8.9, condition: "Sunny"),
-        ChiDailyWeather(label: "Sat", date: "Jul 19", uvIndex: 9.2, condition: "Sunny"),
-        ChiDailyWeather(label: "Sun", date: "Jul 20", uvIndex: 6.5, condition: "Partly Cloudy")
+        ChiDailyWeather(label: "sun", date: "jul 26", uvIndex: 9, condition: "partly cloudy"),
+        ChiDailyWeather(label: "mon", date: "jul 27", uvIndex: 9, condition: "sunny"),
+        ChiDailyWeather(label: "tues", date: "jul 28", uvIndex: 8, condition: "partly cloudy"),
+        ChiDailyWeather(label: "wed", date: "jul 29", uvIndex: 9, condition: "sunny"),
+        ChiDailyWeather(label: "thurs", date: "jul 30", uvIndex: 9, condition: "sunny"),
+        ChiDailyWeather(label: "fri", date: "jul 31", uvIndex: 4, condition: "rainy"),
+        ChiDailyWeather(label: "sat", date: "aug 1", uvIndex: 3, condition: "rainy")
 
 ]
 }

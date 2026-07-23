@@ -8,8 +8,8 @@
 import SwiftUI
 
 enum City: String, CaseIterable, Identifiable {
-    case newYork = "New York"
-    case chicago = "Chicago"
+    case newYork = "new york"
+    case chicago = "chicago"
 
     var id: String { self.rawValue }
 }
@@ -42,15 +42,15 @@ extension City {
 func uvRiskLabel(_ uv: Double) -> (text: String, color: Color) {
     switch uv {
     case ..<3:
-        return ("Low", .green)
+        return ("low", .green)
     case 3..<6:
-        return ("Moderate", .yellow)
+        return ("moderate", .yellow)
     case 6..<8:
-        return ("High", .orange)
+        return ("high", .orange)
     case 8..<11:
-        return ("Very High", .red)
+        return ("very high", .red)
     default:
-        return ("Extreme", .purple)
+        return ("extreme", .purple)
     }
 }
 
@@ -63,10 +63,10 @@ struct MainAppView: View {
             VStack(spacing: 20) {
                 // City picker
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("City")
+                    Text("city")
                         .font(.headline)
 
-                    Picker("City", selection: $selectedCity) {
+                    Picker("city", selection: $selectedCity) {
                         ForEach(City.allCases) { city in
                             Text(city.rawValue).tag(city)
                         }
@@ -76,7 +76,7 @@ struct MainAppView: View {
 
                 // Day picker
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Date")
+                    Text("date")
                         .font(.headline)
 
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -138,7 +138,7 @@ struct MainAppView: View {
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                 } else {
-                    Text("Select a date to see the UV forecast.")
+                    Text("select a day to view the forecast")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .padding(.top, 4)
@@ -149,9 +149,9 @@ struct MainAppView: View {
 
                 // Placeholder — body silhouette goes here
                 VStack(spacing: 8) {
-                    Text("Mark your coverage")
+                    Text("coverage")
                         .font(.headline)
-                    Text("Body silhouette goes here")
+                    Text("insert silhouette")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -161,7 +161,7 @@ struct MainAppView: View {
             }
             .padding()
         }
-        .navigationTitle("SunSafe")
+        .navigationTitle("sunsafe")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             if selectedDay == nil {

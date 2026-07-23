@@ -17,13 +17,13 @@ struct NYDailyWeather: Identifiable {
 
 enum NewYorkWeather {
     static let lastWeek: [NYDailyWeather] = [
-        NYDailyWeather(label: "Mon", date: "Jul 14", uvIndex: 7.2, condition: "Sunny"),
-        NYDailyWeather(label: "Tue", date: "Jul 15", uvIndex: 8.4, condition: "Sunny"),
-        NYDailyWeather(label: "Wed", date: "Jul 16", uvIndex: 5.1, condition: "Partly Cloudy"),
-        NYDailyWeather(label: "Thu", date: "Jul 17", uvIndex: 3.6, condition: "Cloudy"),
-        NYDailyWeather(label: "Fri", date: "Jul 18", uvIndex: 8.9, condition: "Sunny"),
-        NYDailyWeather(label: "Sat", date: "Jul 19", uvIndex: 9.2, condition: "Sunny"),
-        NYDailyWeather(label: "Sun", date: "Jul 20", uvIndex: 6.5, condition: "Partly Cloudy")
+        NYDailyWeather(label: "sun", date: "jul 26", uvIndex: 6, condition: "partly cloudy"),
+        NYDailyWeather(label: "mon", date: "jul 27", uvIndex: 9, condition: "sunny"),
+        NYDailyWeather(label: "tues", date: "jul 28", uvIndex: 9, condition: "sunny"),
+        NYDailyWeather(label: "wed", date: "jul 29", uvIndex: 9, condition: "sunny"),
+        NYDailyWeather(label: "thurs", date: "jul 30", uvIndex: 8, condition: "partly cloudy"),
+        NYDailyWeather(label: "fri", date: "jul 31", uvIndex: 9, condition: "sunny"),
+        NYDailyWeather(label: "sat", date: "aug 1", uvIndex: 7, condition: "partly cloudy")
 
 ]
 }
