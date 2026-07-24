@@ -53,7 +53,7 @@ func uvRiskLabel(_ uv: Double) -> (text: String, color: Color) {
     }
 }
 
-struct MainAppView: View {
+struct MainApp: View {
     @State private var selectedCity: City = .newYork
     @State private var selectedDay: DaySummary?
     @State private var citySearchText: String = ""
@@ -247,6 +247,6 @@ struct MainAppView: View {
 
 #Preview {
     NavigationStack {
-        MainAppView()
+        MainApp()
     }
 }

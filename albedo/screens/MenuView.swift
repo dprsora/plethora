@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct MenuView: View {
+struct Menu: View {
     var body: some View {
         VStack(spacing: 14) {
             NavigationLink {
-                MainAppView()
+                MainApp()
             } label: {
                 Text("check my risk")
                     .font(.headline)
@@ -23,9 +23,33 @@ struct MenuView: View {
             }
 
             NavigationLink {
-                SunscreenInfoView()
+                SunscreenInfo()
             } label: {
                 Text("sunscreen 101")
+                    .font(.headline)
+                    .foregroundStyle(.orange)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.orange.opacity(0.12))
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+            }
+            
+            NavigationLink {
+                SunscreenTimer()
+            } label: {
+                Text("sunscreen timer")
+                    .font(.headline)
+                    .foregroundStyle(.orange)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.orange.opacity(0.12))
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+            }
+            
+            NavigationLink {
+                SunscreenTimer()
+            } label: {
+                Text("application checker")
                     .font(.headline)
                     .foregroundStyle(.orange)
                     .frame(maxWidth: .infinity)
@@ -44,6 +68,6 @@ struct MenuView: View {
 
 #Preview {
     NavigationStack {
-        MenuView()
+        Menu()
     }
 }

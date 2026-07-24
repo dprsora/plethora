@@ -44,7 +44,7 @@ enum SunscreenTips {
     ]
 }
 
-struct SunscreenInfoView: View {
+struct SunscreenInfo: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -87,6 +87,6 @@ struct SunscreenInfoView: View {
 
 #Preview {
     NavigationStack {
-        SunscreenInfoView()
+        SunscreenInfo()
     }
 }

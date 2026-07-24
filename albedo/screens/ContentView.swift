@@ -34,7 +34,7 @@ struct HomeView: View {
 
                 VStack(spacing: 14) {
                     NavigationLink {
-                        MainAppView()
+                        MainApp()
                     } label: {
                         Text("check my risk")
                             .font(.headline)
@@ -46,7 +46,7 @@ struct HomeView: View {
                     }
 
                     NavigationLink {
-                        MenuView()
+                        Menu()
                     } label: {
                         Text("menu")
                             .font(.headline)
