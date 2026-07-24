@@ -148,12 +148,13 @@ struct MainAppView: View {
                     .padding(.top, 4)
 
                 // Placeholder — body silhouette goes here
-                VStack(spacing: 8) {
+                VStack(spacing: 10) {
                     Text("Mark your coverage")
                         .font(.headline)
-                    Text("Body silhouette goes here")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                    Image("silhouette")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 280)
                 }
                 .frame(maxWidth: .infinity, minHeight: 300)
                 .background(Color(.secondarySystemBackground).opacity(0.5))
