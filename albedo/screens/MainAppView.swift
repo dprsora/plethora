@@ -40,11 +40,16 @@ extension City {
 
 func uvRiskLabel(_ uv: Double) -> (text: String, color: Color) {
     switch uv {
-    case ..<3: return ("Low", .green)
-    case 3..<6: return ("Moderate", .yellow)
-    case 6..<8: return ("High", .orange)
-    case 8..<11: return ("Very High", .red)
-    default: return ("Extreme", .purple)
+    case ..<3:
+        return ("Low", .green)
+    case 3..<6:
+        return ("Moderate", .yellow)
+    case 6..<8:
+        return ("High", .orange)
+    case 8..<11:
+        return ("Very High", .red)
+    default:
+        return ("Extreme", .purple)
     }
 }
 
