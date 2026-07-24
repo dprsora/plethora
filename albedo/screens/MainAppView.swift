@@ -9,8 +9,8 @@
 import SwiftUI
 
 enum City: String, CaseIterable, Identifiable, Equatable {
-    case newYork = "New York"
-    case chicago = "Chicago"
+    case newYork = "new york"
+    case chicago = "chicago"
 
     var id: String { self.rawValue }
 }
@@ -42,11 +42,16 @@ extension City {
 
 func uvRiskLabel(_ uv: Double) -> (text: String, color: Color) {
     switch uv {
-    case ..<3: return ("Low", .green)
-    case 3..<6: return ("Moderate", .yellow)
-    case 6..<8: return ("High", .orange)
-    case 8..<11: return ("Very High", .red)
-    default: return ("Extreme", .purple)
+    case ..<3:
+        return ("Low", .green)
+    case 3..<6:
+        return ("Moderate", .yellow)
+    case 6..<8:
+        return ("High", .orange)
+    case 8..<11:
+        return ("Very High", .red)
+    default:
+        return ("Extreme", .purple)
     }
 }
 
@@ -72,13 +77,13 @@ struct MainAppView: View {
             VStack(spacing: 20) {
                 // City search bar
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("City")
+                    Text("city")
                         .font(.headline)
 
                     HStack(spacing: 8) {
                         Image(systemName: "magnifyingglass")
                             .foregroundStyle(.secondary)
-                        TextField("Search for a city", text: $citySearchText)
+                        TextField("find your city", text: $citySearchText)
                             .focused($searchIsFocused)
                             .textInputAutocapitalization(.words)
                             .autocorrectionDisabled()
@@ -111,7 +116,7 @@ struct MainAppView: View {
                     if searchIsFocused {
                         VStack(spacing: 0) {
                             if filteredCities.isEmpty {
-                                Text("No matching cities in the current dataset")
+                                Text("no matching cities")
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
                                     .padding()
@@ -145,7 +150,7 @@ struct MainAppView: View {
 
                 // Day picker
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Date")
+                    Text("date")
                         .font(.headline)
 
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -207,7 +212,7 @@ struct MainAppView: View {
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                 } else {
-                    Text("Select a date to see the UV forecast.")
+                    Text("select a date to see the UV forecast.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .padding(.top, 4)
@@ -220,9 +225,6 @@ struct MainAppView: View {
                 VStack(spacing: 8) {
                     Text("Mark your coverage")
                         .font(.headline)
-                    Text("Body silhouette goes here")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, minHeight: 300)
                 .background(Color(.secondarySystemBackground).opacity(0.5))
@@ -230,7 +232,7 @@ struct MainAppView: View {
             }
             .padding()
         }
-        .navigationTitle("SunSafe")
+        .navigationTitle("albedo")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             if selectedDay == nil {
