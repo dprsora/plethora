@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		60EB8EAC3009422100089BBA /* sunsafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunsafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60EB8EAC3009422100089BBA /* albedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = albedo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		60EB8EAE3009422100089BBA /* sunsafe */ = {
+		60EB8EAE3009422100089BBA /* albedo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = sunsafe;
+			path = albedo;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		60EB8EA33009422100089BBA = {
 			isa = PBXGroup;
 			children = (
-				60EB8EAE3009422100089BBA /* sunsafe */,
+				60EB8EAE3009422100089BBA /* albedo */,
 				60EB8EAD3009422100089BBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		60EB8EAD3009422100089BBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				60EB8EAC3009422100089BBA /* sunsafe.app */,
+				60EB8EAC3009422100089BBA /* albedo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		60EB8EAB3009422100089BBA /* sunsafe */ = {
+		60EB8EAB3009422100089BBA /* albedo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "sunsafe" */;
+			buildConfigurationList = 60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "albedo" */;
 			buildPhases = (
 				60EB8EA83009422100089BBA /* Sources */,
 				60EB8EA93009422100089BBA /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				60EB8EAE3009422100089BBA /* sunsafe */,
+				60EB8EAE3009422100089BBA /* albedo */,
 			);
-			name = sunsafe;
+			name = albedo;
 			packageProductDependencies = (
 			);
 			productName = plethora;
-			productReference = 60EB8EAC3009422100089BBA /* sunsafe.app */;
+			productReference = 60EB8EAC3009422100089BBA /* albedo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 60EB8EA73009422100089BBA /* Build configuration list for PBXProject "sunsafe" */;
+			buildConfigurationList = 60EB8EA73009422100089BBA /* Build configuration list for PBXProject "albedo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				60EB8EAB3009422100089BBA /* sunsafe */,
+				60EB8EAB3009422100089BBA /* albedo */,
 			);
 		};
 /* End PBXProject section */
@@ -309,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		60EB8EA73009422100089BBA /* Build configuration list for PBXProject "sunsafe" */ = {
+		60EB8EA73009422100089BBA /* Build configuration list for PBXProject "albedo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60EB8EB53009422300089BBA /* Debug */,
@@ -318,7 +318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "sunsafe" */ = {
+		60EB8EB73009422300089BBA /* Build configuration list for PBXNativeTarget "albedo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60EB8EB83009422300089BBA /* Debug */,

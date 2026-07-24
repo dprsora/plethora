@@ -18,34 +18,29 @@ enum SunscreenTips {
     static let all: [SunscreenTip] = [
         SunscreenTip(
             icon: "drop.fill",
-            title: "Use Enough Product",
-            description: "Most people apply less than half of what's needed. Aim for about one ounce (a shot glass full) to cover your whole body."
+            title: "use enough product",
+            description: "Use a full shot glass for your body and two finger-lengths for your face. Rub it in thoroughly and reapply often, as sunburns usually happen when people use too little or forget to put on more."
         ),
         SunscreenTip(
             icon: "clock.fill",
-            title: "Apply 15–30 Minutes Early",
-            description: "Sunscreen needs time to bind to skin before UV exposure starts working against it. Apply before you head outside, not after."
+            title: "apply before going out",
+            description: "It takes approximately 15 minutes for your skin to absorb the sunscreen and protect you. If you wait until you are in the sun to apply sunscreen, your skin is unprotected and can burn."
         ),
         SunscreenTip(
             icon: "arrow.triangle.2.circlepath",
-            title: "Reapply Every 2 Hours",
-            description: "Reapply at least every two hours, and immediately after swimming, sweating heavily, or toweling off — even 'water resistant' formulas wear down."
+            title: "reapply every two hours",
+            description: "People who get sunburned usually didn't reapply, used too little sunscreen, or used an expired sunscreen. Your skin is exposed to the sun's harmful UV rays every time you go outside, even on cloudy days and in the winter."
         ),
         SunscreenTip(
             icon: "face.smiling",
-            title: "Don't Forget Commonly Missed Zones",
-            description: "Ears, back of the neck, hairline, tops of feet, and hands are the most frequently skipped spots."
+            title: "apply in all places not covered by clothing",
+            description: "Don't forget easy-to-miss areas like your neck, ears, legs, feet, and scalp—or wear a wide-brimmed hat. Use an SPF 30+ balm for your lips, and use a spray or ask for help with your back."
         ),
         SunscreenTip(
             icon: "sun.max.fill",
-            title: "Check the SPF",
-            description: "SPF 30 blocks about 97% of UVB rays; SPF 50 blocks about 98%. Going higher than 50 has diminishing returns — consistent reapplication matters more than the number."
+            title: "check the SPF",
+            description: "Choose a sunscreen that has an SPF of 30 or higher, is water resistant, and provides broad-spectrum (UVA and UVB rays) coverage. Choosing a tinted version with iron oxide provides extra protection against dark spots and visible light."
         ),
-        SunscreenTip(
-            icon: "tshirt.fill",
-            title: "Clothing Counts Too",
-            description: "Tightly woven, darker fabrics block more UV than sunscreen alone. Combining both gives the strongest protection in high-UV zones like shoulders and back."
-        )
     ]
 }
 
@@ -56,7 +51,7 @@ struct SunscreenInfoView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("sunscreen 101")
                         .font(.largeTitle.bold())
-                    Text("from boared-certified dermatologists")
+                    Text("from board-certified dermatologists at \nthe American Academy of Dermatology")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -85,7 +80,7 @@ struct SunscreenInfoView: View {
             .padding(.horizontal)
             .padding(.bottom, 24)
         }
-        .navigationTitle("sunscreen tips")
+        .navigationTitle("albedo")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
