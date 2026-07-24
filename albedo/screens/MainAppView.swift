@@ -92,7 +92,7 @@ struct MainAppView: View {
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
 
-                    // Selected city chip, shown when not actively searching
+                    // selected city
                     if !searchIsFocused {
                         HStack {
                             Image(systemName: "checkmark.circle.fill")
@@ -140,7 +140,7 @@ struct MainAppView: View {
                     }
                 }
 
-                // Day picker
+                // day picker
                 VStack(alignment: .leading, spacing: 8) {
                     Text("date")
                         .font(.headline)
@@ -167,7 +167,7 @@ struct MainAppView: View {
                     }
                 }
 
-                // Selected day summary
+                // selected forecast
                 if let day = selectedDay {
                     let risk = uvRiskLabel(day.uvIndex)
                     VStack(spacing: 10) {
@@ -213,7 +213,7 @@ struct MainAppView: View {
                 Divider()
                     .padding(.top, 4)
 
-                // Placeholder — body silhouette goes here
+                // body silhouette
                 VStack(spacing: 8) {
                     Text("tap zone feature")
                         .font(.headline)
