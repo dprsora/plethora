@@ -20,7 +20,7 @@ struct HomeView: View {
                     .foregroundStyle(.orange)
 
                 VStack(spacing: 8) {
-                    Text("sunsafe")
+                    Text("albedo")
                         .font(.system(size: 40, weight: .bold, design: .rounded))
 
                     Text("sun safety made simple")

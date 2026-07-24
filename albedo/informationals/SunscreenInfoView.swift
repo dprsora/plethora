@@ -80,7 +80,7 @@ struct SunscreenInfoView: View {
             .padding(.horizontal)
             .padding(.bottom, 24)
         }
-        .navigationTitle("sunscreen tips")
+        .navigationTitle("albedo")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

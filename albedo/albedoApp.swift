@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct sunsafeApp: App {
+struct albedoApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
