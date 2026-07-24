@@ -5,9 +5,10 @@
 //  Created by DPI Student 011 on 7/22/26.
 //
 
+
 import SwiftUI
 
-enum City: String, CaseIterable, Identifiable {
+enum City: String, CaseIterable, Identifiable, Equatable {
     case newYork = "New York"
     case chicago = "Chicago"
 
@@ -41,37 +42,105 @@ extension City {
 
 func uvRiskLabel(_ uv: Double) -> (text: String, color: Color) {
     switch uv {
-    case ..<3:
-        return ("Low", .green)
-    case 3..<6:
-        return ("Moderate", .yellow)
-    case 6..<8:
-        return ("High", .orange)
-    case 8..<11:
-        return ("Very High", .red)
-    default:
-        return ("Extreme", .purple)
+    case ..<3: return ("Low", .green)
+    case 3..<6: return ("Moderate", .yellow)
+    case 6..<8: return ("High", .orange)
+    case 8..<11: return ("Very High", .red)
+    default: return ("Extreme", .purple)
     }
 }
 
-struct MainApp: View {
+struct MainAppView: View {
     @State private var selectedCity: City = .newYork
     @State private var selectedDay: DaySummary?
+    @State private var citySearchText: String = ""
+    @FocusState private var searchIsFocused: Bool
+
+    // Mocks scalability — only NY/Chicago have real data right now,
+    // but the search bar is built to filter against a longer list.
+    private var filteredCities: [City] {
+        if citySearchText.isEmpty {
+            return City.allCases
+        }
+        return City.allCases.filter {
+            $0.rawValue.localizedCaseInsensitiveContains(citySearchText)
+        }
+    }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                // City picker
+                // City search bar
                 VStack(alignment: .leading, spacing: 8) {
                     Text("City")
                         .font(.headline)
 
-                    Picker("City", selection: $selectedCity) {
-                        ForEach(City.allCases) { city in
-                            Text(city.rawValue).tag(city)
+                    HStack(spacing: 8) {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundStyle(.secondary)
+                        TextField("Search for a city", text: $citySearchText)
+                            .focused($searchIsFocused)
+                            .textInputAutocapitalization(.words)
+                            .autocorrectionDisabled()
+                        if !citySearchText.isEmpty {
+                            Button {
+                                citySearchText = ""
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
-                    .pickerStyle(.segmented)
+                    .padding(10)
+                    .background(Color(.secondarySystemBackground))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+
+                    // Selected city chip, shown when not actively searching
+                    if !searchIsFocused {
+                        HStack {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundStyle(.orange)
+                            Text(selectedCity.rawValue)
+                                .font(.subheadline.bold())
+                            Spacer()
+                        }
+                        .padding(.horizontal, 4)
+                    }
+
+                    // Suggestion list, shown while the search bar is focused
+                    if searchIsFocused {
+                        VStack(spacing: 0) {
+                            if filteredCities.isEmpty {
+                                Text("No matching cities in the current dataset")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                                    .padding()
+                            } else {
+                                ForEach(filteredCities) { city in
+                                    Button {
+                                        selectedCity = city
+                                        citySearchText = ""
+                                        searchIsFocused = false
+                                    } label: {
+                                        HStack {
+                                            Image(systemName: "mappin.circle.fill")
+                                                .foregroundStyle(.orange)
+                                            Text(city.rawValue)
+                                                .foregroundStyle(.primary)
+                                            Spacer()
+                                        }
+                                        .padding(.vertical, 10)
+                                        .padding(.horizontal, 12)
+                                    }
+                                    if city != filteredCities.last {
+                                        Divider()
+                                    }
+                                }
+                            }
+                        }
+                        .background(Color(.secondarySystemBackground))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    }
                 }
 
                 // Day picker
@@ -148,13 +217,12 @@ struct MainApp: View {
                     .padding(.top, 4)
 
                 // Placeholder — body silhouette goes here
-                VStack(spacing: 10) {
+                VStack(spacing: 8) {
                     Text("Mark your coverage")
                         .font(.headline)
-                    Image("silhouette")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 280)
+                    Text("Body silhouette goes here")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, minHeight: 300)
                 .background(Color(.secondarySystemBackground).opacity(0.5))
@@ -177,7 +245,6 @@ struct MainApp: View {
 
 #Preview {
     NavigationStack {
-        MainApp()
+        MainAppView()
     }
 }
-

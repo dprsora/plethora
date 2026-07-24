@@ -11,7 +11,7 @@ struct Menu: View {
     var body: some View {
         VStack(spacing: 14) {
             NavigationLink {
-                MainApp()
+                MainAppView()
             } label: {
                 Text("check my risk")
                     .font(.headline)
