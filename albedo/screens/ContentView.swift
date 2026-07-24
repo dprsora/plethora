@@ -46,9 +46,9 @@ struct HomeView: View {
                     }
 
                     NavigationLink {
-                        SunscreenInfoView()
+                        MenuView()
                     } label: {
-                        Text("sunscreen tips")
+                        Text("menu")
                             .font(.headline)
                             .foregroundStyle(.orange)
                             .frame(maxWidth: .infinity)
