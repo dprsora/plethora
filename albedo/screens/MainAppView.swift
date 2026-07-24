@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-enum City: String, CaseIterable, Identifiable, Equatable {
-    case newYork = "new york"
-    case chicago = "chicago"
+enum City: String, CaseIterable, Identifiable {
+    case newYork = "New York"
+    case chicago = "Chicago"
 
     var id: String { self.rawValue }
 }
 
-// common shape that all city data would use --> chiweather and nyweather operate with this
+// Common shape used by this view so NYDailyWeather and ChiDailyWeather
+// (currently separate structs) can be handled the same way.
 struct DaySummary: Identifiable {
     let id = UUID()
     let label: String
@@ -56,98 +57,26 @@ func uvRiskLabel(_ uv: Double) -> (text: String, color: Color) {
 struct MainApp: View {
     @State private var selectedCity: City = .newYork
     @State private var selectedDay: DaySummary?
-    @State private var citySearchText: String = ""
-    @FocusState private var searchIsFocused: Bool
-
-    // search bar mocks scalability but it just shows chi and ny data
-    private var filteredCities: [City] {
-        if citySearchText.isEmpty {
-            return City.allCases
-        }
-        return City.allCases.filter {
-            $0.rawValue.localizedCaseInsensitiveContains(citySearchText)
-        }
-    }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                // search bar
+                // City picker
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("city")
+                    Text("City")
                         .font(.headline)
 
-                    HStack(spacing: 8) {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundStyle(.secondary)
-                        TextField("search for a city", text: $citySearchText)
-                            .focused($searchIsFocused)
-                            .textInputAutocapitalization(.words)
-                            .autocorrectionDisabled()
-                        if !citySearchText.isEmpty {
-                            Button {
-                                citySearchText = ""
-                            } label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundStyle(.secondary)
-                            }
+                    Picker("City", selection: $selectedCity) {
+                        ForEach(City.allCases) { city in
+                            Text(city.rawValue).tag(city)
                         }
                     }
-                    .padding(10)
-                    .background(Color(.secondarySystemBackground))
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-
-                    // selected city
-                    if !searchIsFocused {
-                        HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundStyle(.orange)
-                            Text(selectedCity.rawValue)
-                                .font(.subheadline.bold())
-                            Spacer()
-                        }
-                        .padding(.horizontal, 4)
-                    }
-
-                    // no match found
-                    if searchIsFocused {
-                        VStack(spacing: 0) {
-                            if filteredCities.isEmpty {
-                                Text("no matching cities in the current dataset")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                                    .padding()
-                            } else {
-                                ForEach(filteredCities) { city in
-                                    Button {
-                                        selectedCity = city
-                                        citySearchText = ""
-                                        searchIsFocused = false
-                                    } label: {
-                                        HStack {
-                                            Image(systemName: "mappin.circle.fill")
-                                                .foregroundStyle(.orange)
-                                            Text(city.rawValue)
-                                                .foregroundStyle(.primary)
-                                            Spacer()
-                                        }
-                                        .padding(.vertical, 10)
-                                        .padding(.horizontal, 12)
-                                    }
-                                    if city != filteredCities.last {
-                                        Divider()
-                                    }
-                                }
-                            }
-                        }
-                        .background(Color(.secondarySystemBackground))
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                    }
+                    .pickerStyle(.segmented)
                 }
 
-                // day picker
+                // Day picker
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("date")
+                    Text("Date")
                         .font(.headline)
 
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -172,7 +101,7 @@ struct MainApp: View {
                     }
                 }
 
-                // selected forecast
+                // Selected day summary
                 if let day = selectedDay {
                     let risk = uvRiskLabel(day.uvIndex)
                     VStack(spacing: 10) {
@@ -186,7 +115,7 @@ struct MainApp: View {
                             }
                             Spacer()
                             VStack(alignment: .trailing, spacing: 4) {
-                                Text("uv index")
+                                Text("UV Index")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                                 Text(String(format: "%.1f", day.uvIndex))
@@ -209,7 +138,7 @@ struct MainApp: View {
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                 } else {
-                    Text("select a date to see the UV forecast.")
+                    Text("Select a date to see the UV forecast.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .padding(.top, 4)
@@ -218,13 +147,14 @@ struct MainApp: View {
                 Divider()
                     .padding(.top, 4)
 
-                // body silhouette
-                VStack(spacing: 8) {
-                    Text("tap zone feature")
+                // Placeholder — body silhouette goes here
+                VStack(spacing: 10) {
+                    Text("Mark your coverage")
                         .font(.headline)
-                    Text("add clothing, sunscreen, \nand SPF effctiveness too")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                    Image("silhouette")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 280)
                 }
                 .frame(maxWidth: .infinity, minHeight: 300)
                 .background(Color(.secondarySystemBackground).opacity(0.5))
@@ -232,7 +162,7 @@ struct MainApp: View {
             }
             .padding()
         }
-        .navigationTitle("albedo")
+        .navigationTitle("SunSafe")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             if selectedDay == nil {
@@ -250,3 +180,4 @@ struct MainApp: View {
         MainApp()
     }
 }
+
